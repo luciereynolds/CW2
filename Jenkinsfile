@@ -29,10 +29,10 @@ node {
         }
     }
 
-    stage('Deploy to K8s') {
+    stage('Deploy') {
         /* Deploy passed builds to Kubernetes as a rolling update */
         sshagent(['my-ssh-key']) {
-	        sh 'ssh ubuntu@3.87.194.59 kubectl set image deployments/cw02 cw02-6475795f-chw99=luciereynolds/cw02:1.0'
+	        sh 'ssh ubuntu@3.87.194.59 kubectl set image deployments/cw02 cw02-6475795f-fv94x=luciereynolds/cw02:1.0'
         }
     }
 
