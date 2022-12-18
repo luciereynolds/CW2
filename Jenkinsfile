@@ -32,7 +32,7 @@ node {
     stage('Deploy') {
         /* Deploy passed builds to Kubernetes as a rolling update */
         sshagent(['my-ssh-key']) {
-	        sh 'ssh ubuntu@3.87.194.59 kubectl set image deployments/cw02 cw02=luciereynolds/cw02:$BUILD_NUMBER'
+	        sh 'ssh ubuntu@3.87.194.59 kubectl set image deployments/cw02 cw2=luciereynolds/cw02:$BUILD_NUMBER'
         }
     }
 
